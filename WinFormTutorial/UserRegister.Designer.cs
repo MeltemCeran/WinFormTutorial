@@ -38,12 +38,12 @@
             txtSurname = new TextBox();
             txtName = new TextBox();
             gBoxStep2 = new GroupBox();
+            mTxtPhoneNumber = new MaskedTextBox();
             btnBackStep2 = new Button();
             txtAddress = new TextBox();
             btnNextStep2 = new Button();
             lblPhoneNumber = new Label();
             lblEmail = new Label();
-            txtPhoneNumber = new TextBox();
             txtEmail = new TextBox();
             gBoxStep3 = new GroupBox();
             txtOther = new TextBox();
@@ -56,7 +56,6 @@
             cBoxSport = new CheckBox();
             btnBackStep3 = new Button();
             btnSave = new Button();
-            mTxtPhoneNumber = new MaskedTextBox();
             gBoxStep1.SuspendLayout();
             gBoxStep2.SuspendLayout();
             gBoxStep3.SuspendLayout();
@@ -164,12 +163,20 @@
             gBoxStep2.Controls.Add(lblPhoneNumber);
             gBoxStep2.Controls.Add(lblEmail);
             gBoxStep2.Controls.Add(txtEmail);
-            gBoxStep2.Location = new Point(12, 231);
+            gBoxStep2.Location = new Point(12, 181);
             gBoxStep2.Name = "gBoxStep2";
             gBoxStep2.Size = new Size(310, 175);
             gBoxStep2.TabIndex = 8;
             gBoxStep2.TabStop = false;
             gBoxStep2.Text = "Adım 2 | İletişim Bilgiler";
+            // 
+            // mTxtPhoneNumber
+            // 
+            mTxtPhoneNumber.Location = new Point(19, 60);
+            mTxtPhoneNumber.Mask = "(999) 000-0000";
+            mTxtPhoneNumber.Name = "mTxtPhoneNumber";
+            mTxtPhoneNumber.Size = new Size(115, 23);
+            mTxtPhoneNumber.TabIndex = 10;
             // 
             // btnBackStep2
             // 
@@ -232,15 +239,6 @@
             lblEmail.TextAlign = ContentAlignment.MiddleLeft;
             lblEmail.Visible = false;
             // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.Location = new Point(377, 231);
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.PlaceholderText = "Telefon Numarası";
-            txtPhoneNumber.Size = new Size(115, 23);
-            txtPhoneNumber.TabIndex = 1;
-            txtPhoneNumber.Enter += txtPhoneNumber_Enter;
-            // 
             // txtEmail
             // 
             txtEmail.Location = new Point(19, 28);
@@ -262,7 +260,7 @@
             gBoxStep3.Controls.Add(cBoxSport);
             gBoxStep3.Controls.Add(btnBackStep3);
             gBoxStep3.Controls.Add(btnSave);
-            gBoxStep3.Location = new Point(371, 12);
+            gBoxStep3.Location = new Point(12, 356);
             gBoxStep3.Name = "gBoxStep3";
             gBoxStep3.Size = new Size(310, 175);
             gBoxStep3.TabIndex = 10;
@@ -373,23 +371,14 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // mTxtPhoneNumber
-            // 
-            mTxtPhoneNumber.Location = new Point(19, 60);
-            mTxtPhoneNumber.Mask = "(999) 000-0000";
-            mTxtPhoneNumber.Name = "mTxtPhoneNumber";
-            mTxtPhoneNumber.Size = new Size(115, 23);
-            mTxtPhoneNumber.TabIndex = 10;
-            // 
             // UserRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(693, 528);
+            ClientSize = new Size(693, 537);
             Controls.Add(gBoxStep3);
             Controls.Add(gBoxStep2);
             Controls.Add(gBoxStep1);
-            Controls.Add(txtPhoneNumber);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserRegister";
             StartPosition = FormStartPosition.CenterScreen;
@@ -402,7 +391,6 @@
             gBoxStep3.ResumeLayout(false);
             gBoxStep3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -420,7 +408,6 @@
         private Button btnNextStep2;
         private Label lblPhoneNumber;
         private Label lblEmail;
-        private TextBox txtPhoneNumber;
         private TextBox txtEmail;
         private Button btnBackStep2;
         private GroupBox gBoxStep3;
